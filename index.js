@@ -169,7 +169,7 @@ let questions = [
       ],
     },
     {
-      questions: 'Who expanded new-folk rock in UK?',
+      questions: 'Who wrote the song Dream On?',
       answers: [
         {img: "./img/aerosmith.svg", text: 'Aerosmith', correct: true},
         {img: "./img/queen.svg", text: 'Queen', correct: false},

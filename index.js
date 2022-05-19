@@ -169,7 +169,7 @@ let questions = [
       ],
     },
     {
-      questions: 'Who expanded folk rock in UK?',
+      questions: 'Who expanded new-folk rock in UK?',
       answers: [
         {img: "./img/aerosmith.svg", text: 'Aerosmith', correct: true},
         {img: "./img/queen.svg", text: 'The Velvet Underground', correct: false},
@@ -243,11 +243,10 @@ let questions = [
       setInterval(() => {
           currentTime-=1
           setTimer.innerText = currentTime
-          console.log(gameOverScreen)
+          console.log(currentTime-=1, 'count down')
 
       if(currentTime <= 0) {
         isGameOver = true
-        console.log(score=0)
         clearInterval()
       }
     },1000)

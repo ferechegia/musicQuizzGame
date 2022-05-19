@@ -153,7 +153,7 @@ let questions = [
       ],
     },
     {
-      questions: 'Who rote the song like a rolling stone?',
+      questions: 'Who wrote the song like a rolling stone?',
       answers: [
         {img: "./img/bobDylan.svg", text: 'Bob Dylan', correct: true},
         {img: "./img/velvetUnderground.svg", text: 'The Velvet Underground', correct: false},

@@ -57,7 +57,7 @@ let questions = [
   const btns = document.querySelectorAll('.btn')
   const btnImg = document.querySelectorAll('.btn img')
   const setTimer =document.getElementById('timer')
-  let currentTime = 10
+  let currentTime = 30
 
 
   let selctedAnswer 
@@ -162,14 +162,14 @@ let questions = [
     {
       questions: 'Who rote the song like a California Girl?',
       answers: [
-        {img: "./img/pinkFloyd.svg", text: 'Pink Floyd', correct: true},
+        {img: "./img/pinkFloyd.svg", text: 'Pink Floyd', correct: false},
         {img: "./img/eagles.svg", text: 'The Eagles', correct: false},
         {img: "./img/theWho.svg", text: 'The Who', correct: false},
         {img: "./img/beachBoys.svg", text: 'The Beach Boys', correct: true},
       ],
     },
     {
-      questions: 'Who rote the song like a rolling stone?',
+      questions: 'Who expanded folk rock in UK?',
       answers: [
         {img: "./img/aerosmith.svg", text: 'Aerosmith', correct: true},
         {img: "./img/queen.svg", text: 'The Velvet Underground', correct: false},
@@ -235,8 +235,39 @@ let questions = [
       console.dir(btns[index]) 
       // btnImg[index].outerHTML = answer.img,
       // console.dir(btnImg[index])
-    })
+    }) 
+    countDown()
   }
+
+    function countDown() {
+      setInterval(() => {
+          currentTime-=1
+          setTimer.innerText = currentTime
+          console.log(gameOverScreen)
+
+      if(currentTime <= 0) {
+        isGameOver = true
+        console.log(score=0)
+        clearInterval()
+      }
+    },1000)
+  }
+   
+
+    /*
+    if (isGameOver = false) {
+      setTimeout(() => {
+        setTimer.innerText = currentTime-=1
+        console.log(currentTime-=1, 'count down')
+      },1000)
+    }else if(currentTime === 0) {
+      isGameOver = true
+      clearInterval()
+    }else{
+      clearInterval()
+    }
+  }
+  */
 
 
 
@@ -261,7 +292,8 @@ function checkAnswer() {
       score+=1
       scoreElement.innerHTML = score
       printRandomAnswer()
-
+      countDown()
+      clearInterval()
     }
     else {
           console.log('incorrect')

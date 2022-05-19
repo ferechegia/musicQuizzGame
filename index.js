@@ -57,17 +57,19 @@ let questions = [
   const btns = document.querySelectorAll('.btn')
   const btnImg = document.querySelectorAll('.btn img')
   const setTimer =document.getElementById('timer')
-  let currentTime = 30
+  
+
 
 
   let selctedAnswer 
   let random
   let scoreElement = document.querySelector('#score')
   let score = 1
-  let gameMusic = document.getElementById("music");
+  let gameMusic = new Audio()
+  gameMusic.src = "./audio/ACDCHighwaytoHell.mp3"
   gameMusic.volume = 0.1; // Played in Gameplay Page
-
-
+  let currentTime = 30
+  let timerId 
 
 
   // GLOBAL VARIABLES
@@ -186,6 +188,7 @@ let questions = [
     questionContainerElement.style.display = 'block'
     gameOverScreen.style.display = 'none'
     
+    gameMusic.play()
     printRandomAnswer()
 
     /* shuffledQuestions = questions.sort(() => Math.random() - .5)
@@ -193,20 +196,12 @@ let questions = [
        questionContainerElement.classList.remove('hide')
        setNextQuestion() */
 
-    
-    /*
-       if(isGameOver){
-      cancelAnimationFrame(animationId)
-    }else{
-      animationId =requestAnimationFrame(startGame)
-    }*/
-
   }
 
 
   
   function reStartGame() {
-    console.log('Re Started')
+    // console.log('Re Started')
     homeScreen.style.display = 'block'
     questionContainerElement.style.display = 'none'
     gameOverScreen.style.display = 'none'
@@ -216,13 +211,14 @@ let questions = [
 
 
   function randomAnswer() {
-    console.log('You chose the answer')
+    // console.log('You chose the answer')
     let randomNumber = (Math.floor(Math.random()*questions.length))
     return questions[randomNumber]
   }
   
   
   function printRandomAnswer() {
+    currentTime = 30
     random = randomAnswer(questions)
     questionElement.innerText = random.questions
     
@@ -236,39 +232,29 @@ let questions = [
       // btnImg[index].outerHTML = answer.img,
       // console.dir(btnImg[index])
     }) 
-    countDown()
-  }
 
-    function countDown() {
-      setInterval(() => {
-          currentTime-=1
-          setTimer.innerText = currentTime
-          console.log(currentTime-=1, 'count down')
 
-      if(currentTime <= 0) {
-        isGameOver = true
-        clearInterval()
+    
+    timerId = setInterval(() => {
+      //currentTime-=1
+      setTimer.innerText = currentTime
+      console.log(currentTime, 'count down')
+      if (currentTime === 0) {
+        clearInterval(timerId)
+        gameOver()
+      }else if(currentTime<=30){
+        currentTime-=1
       }
     },1000)
   }
-   
 
-    /*
-    if (isGameOver = false) {
-      setTimeout(() => {
-        setTimer.innerText = currentTime-=1
-        console.log(currentTime-=1, 'count down')
-      },1000)
-    }else if(currentTime === 0) {
-      isGameOver = true
-      clearInterval()
-    }else{
-      clearInterval()
-    }
-  }
-  */
-
-
+  function gameOver() {
+    // console.log('Re Started')
+    homeScreen.style.display = 'none'
+    questionContainerElement.style.display = 'none'
+    gameOverScreen.style.display = 'block'
+    gameMusic.pause()
+  }  
 
   function showQuestion(question) {
     showQuestion(shuffledQuestions[currentQuestionIndex])
@@ -290,9 +276,9 @@ function checkAnswer() {
       console.log('correct')
       score+=1
       scoreElement.innerHTML = score
+      clearInterval(timerId)
       printRandomAnswer()
-      countDown()
-      clearInterval()
+      
     }
     else {
           console.log('incorrect')

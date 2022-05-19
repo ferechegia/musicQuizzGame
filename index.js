@@ -188,6 +188,15 @@ let questions = [
         {img: "./img/nas.svg", text: 'Nas', correct: false},
       ],
     },
+    {
+      questions: 'Who wrote the song Blue Moon?',
+      answers: [
+        {img: "./img/louisArmstrong.svg", text: 'Louis Armstrong', correct: false},
+        {img: "./img/milesDavis.svg", text: 'Miles Davis', correct: false},
+        {img: "./img/johnColtrain.svg", text: 'John Coltrain', correct: false},
+        {img: "./img/billieHolliday-1.svg", text: 'Billie Holiday', correct: true},
+      ],
+    },
   ]
  
   

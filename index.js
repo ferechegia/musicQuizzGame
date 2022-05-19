@@ -162,7 +162,7 @@ let questions = [
       ],
     },
     {
-      questions: 'Who rote the song like a California Girl?',
+      questions: 'Who wrote the song like a California Girl?',
       answers: [
         {img: "./img/pinkFloyd.svg", text: 'Pink Floyd', correct: false},
         {img: "./img/eagles.svg", text: 'The Eagles', correct: false},

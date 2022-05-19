@@ -124,7 +124,7 @@ let questions = [
       questions: 'Who released the album Surfer Rosa?',
       answers: [
         {img: "./img/biggieCard.svg", text: 'Notorious B.I.G', correct: false},
-        {img: "/img/pixiesCard.svg",text: 'The Pixies', correct: true},
+        {img: "./img/pixiesCard.svg",text: 'The Pixies', correct: true},
         {img: "./img/arcticMonkeysCard.svg", text: 'Arctic Monkeys', correct: false},
         {img: "./img/sonicYouthCard.svg", text: 'Sonic Youth', correct: false},
         

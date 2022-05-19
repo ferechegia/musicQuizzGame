@@ -172,7 +172,7 @@ let questions = [
       questions: 'Who expanded new-folk rock in UK?',
       answers: [
         {img: "./img/aerosmith.svg", text: 'Aerosmith', correct: true},
-        {img: "./img/queen.svg", text: 'The Velvet Underground', correct: false},
+        {img: "./img/queen.svg", text: 'Queen', correct: false},
         {img: "./img/buffaloSpringfield.svg", text: 'Buffalo Springfield', correct: false},
         {img: "./img/mumfordAndSons.svg", text: 'Mumford & Sons', correct: false},
       ],

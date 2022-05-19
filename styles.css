@@ -28,7 +28,7 @@ body {
   font-family: 'Futura';
   font-size: 24px;
   font-weight: 300;
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0.6);
   }
   @supports (mask-image: paint(smooth-corners)) {
     .btn.is-loaded {
@@ -42,7 +42,7 @@ body {
     border: 4px;
     background: rgba(0, 0, 0, 0.4);
     box-shadow: 0px 20px 40px rgba(255, 77, 0, 0.6);
-    border-radius: 40px;
+    border-radius: 80px;
   }
 
   .btnImg {

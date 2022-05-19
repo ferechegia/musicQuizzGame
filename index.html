@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Music Quiz Game</title>
+  </head>
+  <body >
+
+     <audio controls id="music" autoplay>
+      <source src="/audio/ACDCHighwaytoHell.mp3" type="audio/mpeg">
+      </audio>
+
+
+    <div class="homeScreen" >
+      <h1>Welcome to The Music Quizz</h1>
+      <p>We have over 10 music questions to test your knowledge about lyrics, artists, and chart-topping hits. Test your musical knowledge and discover new songs for yourself. Are you ready to challenge your musical knowledge?</p>
+      <button id="start-btn" >Start</button>
+     </div>
+
+      <div id="question-container" class="hide">
+        <div id="levelTime">
+          
+          <div id="question">
+            <h1>Question</h1>
+          </div>
+
+          <div id= "level">
+            <h4> Level: <span id="score"> 1</span></h4>
+          </div> 
+          <div id= "time">
+            <h4> Time: <span id="timer"> 10</span> <span><img src="/img/clockIcon.svg"></span></h4>
+          </div> 
+        </div>
+        <div id="answer-buttons" class="btn-grid" >
+          <button class="btn">Answer 1</button>
+          <button class="btn">Answer 2</button>
+          <button class="btn">Answer 3</button>
+          <button class="btn">Answer 4</button>
+        </div>
+      </div>
+
+      
+
+      <div class="gameOverScreen" >
+        <h1>Game Over</h1>
+        <button id="reStart-btn" >Re start</button>
+      </div>
+  <script src="index.js"></script>
+  </body>
+</html>

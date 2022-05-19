@@ -176,7 +176,16 @@ let questions = [
         {img: "./img/aerosmith.svg", text: 'Aerosmith', correct: true},
         {img: "./img/queen.svg", text: 'Queen', correct: false},
         {img: "./img/buffaloSpringfield.svg", text: 'Buffalo Springfield', correct: false},
-        {img: "./img/mumfordAndSons.svg", text: 'Mumford & Sons', correct: false},
+        {img: "./img/theWho.svg", text: 'The Who', correct: false},
+      ],
+    },
+    {
+      questions: 'Who was first produced by Dr. Dre?',
+      answers: [
+        {img: "./img/eminem.svg", text: 'Eminem', correct: true},
+        {img: "./img/50cent.svg", text: '50 Cent', correct: false},
+        {img: "./img/drake.svg", text: 'Drake', correct: false},
+        {img: "./img/nas.svg", text: 'Nas', correct: false},
       ],
     },
   ]
